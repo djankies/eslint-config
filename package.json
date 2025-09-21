@@ -1,0 +1,86 @@
+{
+  "name": "@djankies/eslint-config",
+  "version": "1.0.0",
+  "description": "Shared ESLint configuration for djankies projects",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "import": "./eslint.config.ts",
+      "require": "./index.js"
+    },
+    "./eslint.config": "./eslint.config.ts",
+    "./configs/*": "./eslint-config/*.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "eslint ."
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "djankies",
+    "typescript",
+    "nextjs",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": "^9.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.35.0",
+    "@eslint/json": "^0.13.2",
+    "@next/eslint-plugin-next": "15.5.3",
+    "@stylistic/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "eslint-config-next": "15.5.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-boundaries": "^4.2.0",
+    "eslint-plugin-canonical": "^5.1.3",
+    "eslint-plugin-de-morgan": "^1.3.1",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-json": "^4.0.1",
+    "eslint-plugin-jsonc": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-n": "^17.23.1",
+    "eslint-plugin-no-unsanitized": "^4.1.4",
+    "eslint-plugin-perfectionist": "^4.15.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-regexp": "^2.10.0",
+    "eslint-plugin-sql": "^3.2.2",
+    "eslint-plugin-tailwindcss": "^3.18.2",
+    "eslint-plugin-testing-library": "^6.4.0",
+    "eslint-plugin-unicorn": "^61.0.2",
+    "eslint-plugin-unused-imports": "^4.2.0",
+    "eslint-plugin-vitest": "^0.5.4",
+    "eslint-plugin-yml": "^1.18.0",
+    "eslint-plugin-zod": "^1.4.0",
+    "jsonc-eslint-parser": "^2.4.0",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.44.0",
+    "yaml-eslint-parser": "^1.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.15.0",
+    "typescript": "^5.7.3"
+  },
+  "files": [
+    "eslint.config.ts",
+    "eslint-config",
+    "index.js",
+    "index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djankies/eslint-config.git"
+  }
+}
