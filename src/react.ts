@@ -131,7 +131,8 @@ export const react = [
       'react-hooks/exhaustive-deps': 'warn',
       'react-hooks/rules-of-hooks': 'error',
       'react/jsx-indent-props': ['warn', 2],
-      'react/jsx-no-leaked-render': 'error',
+      // Rule is broken, see issue #3927: https://github.com/jsx-eslint/eslint-plugin-react/issues/3927
+      'react/jsx-no-leaked-render': 'off',
       'react/forbid-foreign-prop-types': 0,
       'react/jsx-child-element-spacing': 0,
       'react/jsx-no-target-blank': 'error',
