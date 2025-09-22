@@ -9,7 +9,9 @@ eslint.config.ts
 tsconfig.json
 tsconfig.eslint.json
 .gitignore
+.npmignore
 .vscode/
+index.js
 
 # Development dependencies
 node_modules/
@@ -25,11 +27,52 @@ package-lock.json
 **/*.spec.*
 __tests__/
 coverage/
+test/
+tests/
 
-# Misc
-*.log
-*.tgz
-.DS_Store
-.env*
+# Documentation (except README)
 *.md
 !README.md
+!LICENSE
+
+# IDE and OS files
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.swo
+*~
+.vscode/
+.vs/
+
+# Logs and temp files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+*.tgz
+*.tmp
+.temp/
+tmp/
+
+# Environment files
+.env*
+.env.local
+.env.*.local
+
+# Build artifacts that shouldn't be needed
+*.map
+!dist/**/*.map
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.circleci/
+.travis.yml
+
+# Editor config
+.editorconfig
+.eslintcache
+.prettierignore
+.prettierrc*
