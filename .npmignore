@@ -1,0 +1,35 @@
+# Source files
+src/
+*.ts
+!dist/**/*.d.ts
+
+# Configuration files
+eslint.config.mjs
+eslint.config.ts
+tsconfig.json
+tsconfig.eslint.json
+.gitignore
+.vscode/
+
+# Development dependencies
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+
+# Git
+.git/
+.github/
+
+# Tests
+**/*.test.*
+**/*.spec.*
+__tests__/
+coverage/
+
+# Misc
+*.log
+*.tgz
+.DS_Store
+.env*
+*.md
+!README.md

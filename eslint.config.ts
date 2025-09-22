@@ -1,6 +1,7 @@
 import type { Linter } from 'eslint';
 import perfectionistPlugin from 'eslint-plugin-perfectionist';
 import configs from './eslint-config';
+import { PLUGIN_MAP } from './src/plugins';
 
 const { plugins } = configs.pluginsConfig;
 
@@ -10,32 +11,6 @@ const ensureArray = (config: unknown): Linter.Config[] => {
 };
 
 const applyPlugins = (configs: Linter.Config[]): Linter.Config[] => {
-  const pluginMap: Record<string, string> = {
-    '@next': '@next/next',
-    '@stylistic': '@stylistic',
-    '@typescript-eslint': '@typescript-eslint',
-    boundaries: 'boundaries',
-    canonical: 'canonical',
-    'de-morgan': 'de-morgan',
-    'eslint-comments': 'eslint-comments',
-    import: 'import',
-    jsonc: 'jsonc',
-    'jsx-a11y': 'jsx-a11y',
-    n: 'n',
-    'no-unsanitized': 'no-unsanitized',
-    perfectionist: 'perfectionist',
-    prettier: 'prettier',
-    promise: 'promise',
-    react: 'react',
-    'react-hooks': 'react-hooks',
-    regexp: 'regexp',
-    tailwindcss: 'tailwindcss',
-    'testing-library': 'testing-library',
-    unicorn: 'unicorn',
-    vitest: 'vitest',
-    yml: 'yml',
-    zod: 'zod',
-  };
 
   return configs.map((config) => {
     if (!config.rules) { return config; }
@@ -44,7 +19,7 @@ const applyPlugins = (configs: Linter.Config[]): Linter.Config[] => {
 
     for (const ruleName of Object.keys(config.rules)) {
       const [pluginName] = ruleName.split('/');
-      const mappedPlugin = pluginMap[pluginName];
+      const mappedPlugin = PLUGIN_MAP[pluginName];
 
       if (mappedPlugin && (plugins as Record<string, unknown>)[mappedPlugin]) {
         neededPlugins[mappedPlugin] = (plugins as Record<string, unknown>)[mappedPlugin];

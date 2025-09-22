@@ -34,4 +34,9 @@ export const globalIgnores = createGlobalIgnores([
 
   // Static assets
   '**/public/',
+
+  // ESLint config package
+  '@eslint-config/',
 ]);
+
+export default globalIgnores;

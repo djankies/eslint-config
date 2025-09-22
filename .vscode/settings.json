@@ -1,0 +1,107 @@
+{
+  // Code formatting and linting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
+  "eslint.format.enable": true,
+  "eslint.quiet": false,
+  "prettier.requireConfig": true,
+  "prettier.enable": false,
+  "eslint.validate": [
+    "css",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "markdown",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+    "jsonc",
+    "yml",
+    "md",
+    "mdx"
+  ],
+
+  // Editor behavior
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+
+  // Workbench
+  "workbench.externalBrowser": "chrome",
+
+  // File associations and exclusions
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/out": true,
+    "**/.next": true,
+    "**/tsconfig.tsbuildinfo": true,
+    "**/next-env.d.ts": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/out": true,
+    "**/.next": true,
+    "**/coverage": true
+  },
+
+  // TypeScript and JavaScript
+  "typescript.validate.enable": true,
+  "javascript.validate.enable": false,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.suggest.autoImports": true,
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+  "typescript.suggest.completeFunctionCalls": true,
+  "javascript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
+  "typescript.check.npmIsInstalled": true,
+  "typescript.suggest.includeCompletionsForImportStatements": true,
+  "typescript.suggest.paths": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  // Spell checking
+  "cSpell.words": ["Shadcn"],
+  "cSpell.enabled": true,
+  "cSpell.ignorePaths": ["node_modules/**", "out/**", ".next/**", "coverage/**"],
+  "cSpell.suggestionMenuType": "quickFix",
+  "cSpell.allowCompoundWords": true,
+
+  // Explorer
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.*.ts",
+    "*.tsx": "${capture}.*.tsx",
+    "*.js": "${capture}.js.map, ${capture}.*.js",
+    "*.jsx": "${capture}.*.jsx",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
+    "tsconfig.json": "tsconfig.*.json, tsconfig.tsbuildinfo",
+    "tailwind.config.*": "tailwind.config.*",
+    "next.config.*": "next.config.*, next-env.d.ts",
+    "eslint.config.mjs": "eslint.config.*",
+    "vitest.config.ts": "vitest*",
+    ".prettierrc": ".prettierignore",
+    ".env*": ".env.*"
+  },
+
+  // Formatter configuration per file type
+  // ESLint Stylistic for JS/TS/JSON (overrides default Prettier)
+  "[css][html][javascript][javascriptreact][json][markdown][typescript][typescriptreact][yaml]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
+}

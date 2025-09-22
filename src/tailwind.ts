@@ -1,34 +1,29 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { type Linter } from 'eslint';
 // @ts-expect-error - no types available
 import tailwindPlugin from 'eslint-plugin-tailwindcss';
+import { type Linter } from 'eslint';
 
 const tailwind: Linter.Config[] = [
   {
-    name: 'tailwind/setup',
     plugins: {
       tailwindcss: tailwindPlugin,
     },
+    name: 'tailwind/setup',
   },
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
-    name: 'tailwind/rules',
     rules: {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       ...tailwindPlugin.configs.recommended.rules,
-      'tailwindcss/classnames-order': 'warn',
       'tailwindcss/enforces-negative-arbitrary-values': 'warn',
-      'tailwindcss/enforces-shorthand': 'warn',
-      'tailwindcss/no-arbitrary-value': 'off',
-      'tailwindcss/no-contradicting-classname': 'error',
-      'tailwindcss/no-custom-classname': 'off',
       'tailwindcss/no-unnecessary-arbitrary-value': 'warn',
+      'tailwindcss/no-contradicting-classname': 'error',
+      'tailwindcss/enforces-shorthand': 'warn',
+      'tailwindcss/no-custom-classname': 'off',
+      'tailwindcss/no-arbitrary-value': 'off',
+      'tailwindcss/classnames-order': 'warn',
     },
     settings: {
       tailwindcss: {
-        callees: ['cn', 'clsx', 'cva', 'classnames', 'twMerge'],
-        classRegex: '^(class|className|tw)$',
-        config: 'tailwind.config.ts',
         cssFiles: [
           '**/*.css',
           '!**/node_modules/**',
@@ -37,12 +32,17 @@ const tailwind: Linter.Config[] = [
           '!**/build/**',
           '!**/.next/**',
         ],
-        removeDuplicates: true,
+        callees: ['cn', 'clsx', 'cva', 'classnames', 'twMerge'],
+        config: 'tailwind.config.ts',
+        classRegex: '^className$',
         skipClassAttribute: false,
-        tags: [],
+        removeDuplicates: true,
         whitelist: [],
+        tags: [],
       },
     },
+    files: ['**/app/**/*.{js,jsx,ts,tsx}'],
+    name: 'tailwind/rules',
   },
 ];
 

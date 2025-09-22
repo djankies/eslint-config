@@ -6,11 +6,11 @@ const compat = new FlatCompat({
 
 export const zod = compat
   .config({
-    plugins: ['zod'],
     rules: {
-      'zod/prefer-enum': 2,
       'zod/require-strict': 2,
+      'zod/prefer-enum': 2,
     },
+    plugins: ['zod'],
   })
   .map(config => ({
     ...config,
