@@ -256,7 +256,7 @@ export const canonical = [
           allowAsStatement: true,
         },
       ],
-      '@stylistic/function-call-argument-newline': [2, 'consistent'],
+      '@stylistic/function-call-argument-newline': 'off',
       '@stylistic/nonblock-statement-body-position': [2, 'below'],
       '@stylistic/lines-between-class-members': [2, 'always'],
       '@stylistic/space-before-function-paren': [2, 'always'],
