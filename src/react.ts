@@ -25,16 +25,7 @@ export const react = [
           ],
         },
       ],
-      'react/jsx-handler-names': [
-        'warn',
-        {
-          eventHandlerPrefix: 'handle',
-          eventHandlerPropPrefix: 'on',
-          checkInlineFunction: false,
-          checkLocalVariables: false,
-          ignoreComponentNames: ['FormField', 'FormControl', 'input'],
-        },
-      ],
+      'react/jsx-handler-names': 'off',
       'react/function-component-definition': [
         'warn',
         {
