@@ -28,7 +28,7 @@ import promisePlugin from 'eslint-plugin-promise';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import importPlugin from 'eslint-plugin-import';
 import regexpPlugin from 'eslint-plugin-regexp';
-import vitestPlugin from 'eslint-plugin-vitest';
+import vitestPlugin from '@vitest/eslint-plugin';
 import { FlatCompat } from '@eslint/eslintrc';
 import jsoncPlugin from 'eslint-plugin-jsonc';
 import reactPlugin from 'eslint-plugin-react';
