@@ -22,6 +22,7 @@ import nodeConfig from './node.js';
 import yamlConfig from './yaml.js';
 import jtxConfig from './jtx.js';
 import zodConfig from './zod.js';
+import markdownConfig from './markdown.js';
 
 export * from './ignores.js';
 export * from './plugins.js';
@@ -83,6 +84,7 @@ const flatConfig = [
   ...applyConfig(nodeConfig),
   ...applyConfig(jsonConfig),
   ...applyConfig(yamlConfig),
+  ...applyConfig(markdownConfig),
   ...applyConfig(regexpConfig),
   ...applyConfig(zodConfig),
   ...applyConfig(jtxConfig),
@@ -125,4 +127,5 @@ export {
   yamlConfig,
   jtxConfig,
   zodConfig,
+  markdownConfig,
 };

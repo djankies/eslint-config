@@ -35,6 +35,8 @@ import reactPlugin from 'eslint-plugin-react';
 import yamlPlugin from 'eslint-plugin-yml';
 import zodPlugin from 'eslint-plugin-zod';
 import nPlugin from 'eslint-plugin-n';
+// @ts-expect-error - no types available
+import markdownPlugin from 'eslint-plugin-markdown';
 
 // Export all plugins as a single object
 export const plugins: any = {
@@ -62,6 +64,7 @@ export const plugins: any = {
   yml: yamlPlugin,
   zod: zodPlugin,
   n: nPlugin, // eslint-disable-line id-length
+  markdown: markdownPlugin as any,
 };
 
 // Plugin name mapping for rule parsing
@@ -90,6 +93,7 @@ export const PLUGIN_MAP: Record<string, string> = {
   vitest: 'vitest',
   yml: 'yml',
   zod: 'zod',
+  markdown: 'markdown',
 };
 
 export const compat = new FlatCompat({
