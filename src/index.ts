@@ -26,35 +26,74 @@ import zodConfig from './zod.js';
 export * from './ignores.js';
 export * from './plugins.js';
 
+import { plugins, PLUGIN_MAP } from './plugins.js';
+
 const ensureArray = (config: any) => {
   if (!config) return [];
   return Array.isArray(config) ? config : [config];
 };
 
+const applyPlugins = (configs: any[]) => {
+  return configs.map(configInConfigs => {
+    if (!configInConfigs.rules) {
+      return configInConfigs;
+    }
+
+    if (configInConfigs.plugins) {
+      return configInConfigs;
+    }
+
+    const neededPlugins: any = {};
+
+    for (const ruleName of Object.keys(configInConfigs.rules)) {
+      const [pluginName] = ruleName.split('/');
+      const mappedPlugin = PLUGIN_MAP[pluginName];
+
+      if (mappedPlugin && plugins[mappedPlugin]) {
+        neededPlugins[mappedPlugin] = plugins[mappedPlugin];
+      }
+    }
+
+    if (Object.keys(neededPlugins).length === 0) {
+      return configInConfigs;
+    }
+
+    return {
+      ...configInConfigs,
+      plugins: neededPlugins,
+    };
+  });
+};
+
+const applyConfig = (config: any, omitPlugins = false) => {
+  const configArray = ensureArray(config);
+  return omitPlugins ? configArray : applyPlugins(configArray);
+};
+
 const flatConfig = [
   ...ensureArray(ignoresConfig),
-  ...ensureArray(canonicalConfig),
-  ...ensureArray(typescriptConfig),
-  ...ensureArray(importsConfig),
-  ...ensureArray(reactConfig),
-  ...ensureArray(nextConfig),
-  ...ensureArray(tailwindConfig),
-  ...ensureArray(a11yConfig),
-  ...ensureArray(browserConfig),
-  ...ensureArray(nodeConfig),
-  ...ensureArray(jsonConfig),
-  ...ensureArray(yamlConfig),
-  ...ensureArray(regexpConfig),
-  ...ensureArray(zodConfig),
-  ...ensureArray(jtxConfig),
-  ...ensureArray(boundariesConfig),
-  ...ensureArray(vitestConfig),
-  ...ensureArray(mocksConfig),
-  ...ensureArray(amplifyConfig),
-  ...ensureArray(configsConfig),
-  ...ensureArray(tsconfigsConfig),
-  ...ensureArray(perfectionistConfig),
-  ...ensureArray(prettierConfig),
+  ...applyConfig(canonicalConfig),
+  ...applyConfig(typescriptConfig, true), // typescript-eslint provides its own plugins
+  ...applyConfig(importsConfig),
+  ...applyConfig(reactConfig),
+  ...applyConfig(nextConfig, true), // next provides its own plugins
+  ...applyConfig(tailwindConfig),
+  ...applyConfig(a11yConfig),
+  ...applyConfig(browserConfig),
+  ...applyConfig(nodeConfig),
+  ...applyConfig(jsonConfig),
+  ...applyConfig(yamlConfig),
+  ...applyConfig(regexpConfig),
+  ...applyConfig(zodConfig),
+  ...applyConfig(jtxConfig),
+  ...applyConfig(boundariesConfig),
+  ...applyConfig(vitestConfig),
+  ...applyConfig(mocksConfig),
+  ...applyConfig(amplifyConfig),
+  ...applyConfig(configsConfig),
+  ...applyConfig(tsconfigsConfig),
+  ...applyConfig(perfectionistConfig),
+  ...applyConfig(prettierConfig),
 ];
 
 export { flatConfig };
