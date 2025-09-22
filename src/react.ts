@@ -95,7 +95,13 @@ export const react = [
           prevent: true,
         },
       ],
-      'react/boolean-prop-naming': ['error', { rule: '^(is|has)[A-Z]([A-Za-z0-9]?)+' }],
+      'react/boolean-prop-naming': [
+        'error',
+        {
+          rule: '^(is|has|can|should|will|did|was|does|enable|disable|show|hide|allow|require)[A-Z]([A-Za-z0-9]?)+',
+          message: 'Boolean prop should start with is, has, can, should, will, did, was, does, enable, disable, show, hide, allow, or require'
+        }
+      ],
       'react/jsx-first-prop-new-line': ['warn', 'multiline-multiprop'],
       'react/jsx-closing-bracket-location': ['warn', 'line-aligned'],
       'react/no-redundant-should-component-update': 'error',
