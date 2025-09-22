@@ -214,6 +214,12 @@ export const react = [
     rules: {
       'react/jsx-handler-names': 'off',
     },
+  },
+  {
+    files: ['**/app/**/*.{jsx,tsx}'],
+    rules: {
+      'canonical/filename-match-exported': 'off',
+    },
   }
 ];
 
