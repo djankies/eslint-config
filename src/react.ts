@@ -98,7 +98,7 @@ export const react: FlatConfigArray = [
         },
       ],
       'react/boolean-prop-naming': [
-        'error',
+        'warn',
         {
           rule: '^(is|has|can|should|will|did|was|does|enable|disable|show|hide|allow|require)[A-Z]([A-Za-z0-9]?)+',
         },

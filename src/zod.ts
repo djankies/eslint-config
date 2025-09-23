@@ -9,7 +9,7 @@ export const zod: FlatConfigArray = compat
   .config({
     rules: {
       'zod/require-strict': 2,
-      'zod/prefer-enum': 2,
+      'zod/prefer-enum': 1,
     },
     plugins: ['zod'],
   })

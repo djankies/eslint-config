@@ -4,7 +4,7 @@ const boundariesConfig: FlatConfigArray = [
   {
     rules: {
       'boundaries/element-types': [
-        'error',
+        'warn',
         {
           rules: [
             {
@@ -152,7 +152,7 @@ const boundariesConfig: FlatConfigArray = [
 
       // Enforce consistent naming
       'boundaries/entry-point': [
-        'error',
+        'warn',
         {
           rules: [
             {

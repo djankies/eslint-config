@@ -5,7 +5,7 @@ export const json: FlatConfigArray = [
   {
     rules: {
       'jsonc/sort-keys': [
-        2,
+        1,
         'asc',
         {
           caseSensitive: false,
@@ -27,7 +27,7 @@ export const json: FlatConfigArray = [
       'jsonc/no-binary-expression': 2,
       'jsonc/no-template-literals': 2,
       'jsonc/object-curly-newline': 0,
-      'jsonc/object-curly-spacing': 2,
+      'jsonc/object-curly-spacing': 1,
       'jsonc/no-floating-decimal': 2,
       'jsonc/no-bigint-literals': 2,
       'jsonc/no-regexp-literals': 2,
@@ -47,7 +47,7 @@ export const json: FlatConfigArray = [
       'jsonc/no-plus-sign': 2,
       'jsonc/indent': 0,
       'jsonc/key-spacing': 0,
-      'jsonc/no-comments': 2,
+      'jsonc/no-comments': 1,
       'jsonc/no-infinity': 2,
       'jsonc/quote-props': 0,
       'jsonc/no-octal': 2,

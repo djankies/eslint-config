@@ -20,7 +20,7 @@ export const vitest: FlatConfigArray = [
 
       'import/no-extraneous-dependencies': 'off',
       'vitest/no-conditional-tests': 2,
-      'vitest/max-nested-describe': 2,
+      'vitest/max-nested-describe': 1,
 
       'import/no-unresolved': 'warn',
       'vitest/no-identical-title': 2,
