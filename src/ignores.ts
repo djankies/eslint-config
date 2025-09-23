@@ -30,7 +30,6 @@ export const globalIgnores: FlatConfig = createGlobalIgnores([
 
   // Config files
   '.env*',
-  '.esprintrc',
   '.gitignore',
 
   // Static assets
