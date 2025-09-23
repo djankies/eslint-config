@@ -1,4 +1,6 @@
-export const configsConfig = [
+import { type FlatConfigArray } from './types.js';
+
+export const configsConfig: FlatConfigArray = [
   {
     files: [
       '*.config.{js,mjs,cjs}',

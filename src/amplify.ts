@@ -1,4 +1,6 @@
-export const amplifyConfig = [
+import { type FlatConfigArray } from './types.js';
+
+export const amplifyConfig: FlatConfigArray = [
   {
     // Parser already configured by typescript.ts for all .ts files
     rules: {

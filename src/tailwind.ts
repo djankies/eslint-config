@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // @ts-expect-error - no types available
 import tailwindPlugin from 'eslint-plugin-tailwindcss';
-import { type Linter } from 'eslint';
+import { type FlatConfigArray } from './types.js';
 
-const tailwind: Linter.Config[] = [
+const tailwind: FlatConfigArray = [
   {
     plugins: {
       tailwindcss: tailwindPlugin,

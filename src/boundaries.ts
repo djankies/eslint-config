@@ -1,4 +1,6 @@
-export default [
+import { type FlatConfigArray } from './types.js';
+
+const boundariesConfig: FlatConfigArray = [
   {
     rules: {
       'boundaries/element-types': [
@@ -332,3 +334,5 @@ export default [
     files: ['**/*.{js,jsx,ts,tsx}'],
   },
 ];
+
+export default boundariesConfig;

@@ -1,6 +1,7 @@
 import globals from 'globals';
+import { type FlatConfigArray } from './types.js';
 
-export const browserConfig = [
+export const browserConfig: FlatConfigArray = [
   {
     rules: {
       'unicorn/prefer-dom-node-text-content': 2,

@@ -13,9 +13,7 @@ npm install --save-dev @djankies/eslint-config
 Create an `eslint.config.js` or `eslint.config.mjs` file in your project:
 
 ```javascript
-import eslintConfig from '@djankies/eslint-config';
-
-export default eslintConfig;
+export { default } from '@djankies/eslint-config';
 ```
 
 Or if you want to extend/customize:

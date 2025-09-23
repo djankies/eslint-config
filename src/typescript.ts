@@ -1,5 +1,7 @@
 import { configs, parser } from 'typescript-eslint';
 
+type ESLintConfig = Record<string, unknown>;
+
 const CRITICAL_TYPESCRIPT_RULES = {
   '@typescript-eslint/no-misused-promises': [
     'error',
@@ -112,7 +114,7 @@ const ALL_TYPESCRIPT_RULES = {
   ...QUALITY_TYPESCRIPT_RULES,
 };
 
-export const typescript: any = [
+export const typescript: ESLintConfig[] = [
   ...configs.recommendedTypeChecked.map(config => ({
     ...config,
     files: ['**/*.{ts,tsx}'],

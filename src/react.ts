@@ -1,4 +1,6 @@
-export const react = [
+import { type FlatConfigArray } from './types.js';
+
+export const react: FlatConfigArray = [
   {
     rules: {
       'react/jsx-pascal-case': [
@@ -99,8 +101,7 @@ export const react = [
         'error',
         {
           rule: '^(is|has|can|should|will|did|was|does|enable|disable|show|hide|allow|require)[A-Z]([A-Za-z0-9]?)+',
-          message: 'Boolean prop should start with is, has, can, should, will, did, was, does, enable, disable, show, hide, allow, or require'
-        }
+        },
       ],
       'react/jsx-first-prop-new-line': ['warn', 'multiline-multiprop'],
       'react/jsx-closing-bracket-location': ['warn', 'line-aligned'],
@@ -217,7 +218,19 @@ export const react = [
     files: ['**/*.{jsx,tsx}'],
   },
   {
-    files: ['**/assignQualificationDialog.tsx', '**/new/edit-form/page.tsx', '**/app/reports/**/edit/page.tsx', 'components/dialogs/organization/memberManagementDialog.tsx', 'components/dialogs/positions/createPositionDialog.tsx', 'components/dialogs/positions/editPositionDialog.tsx', 'components/ui/avatar.tsx', 'components/ui/alert-dialog.tsx', 'components/ui/**/*.tsx', 'components/dialogs/positions/create-position-dialog.tsx', 'components/dialogs/organization/member-management-dialog.tsx', ],
+    files: [
+      '**/assignQualificationDialog.tsx',
+      '**/new/edit-form/page.tsx',
+      '**/app/reports/**/edit/page.tsx',
+      'components/dialogs/organization/memberManagementDialog.tsx',
+      'components/dialogs/positions/createPositionDialog.tsx',
+      'components/dialogs/positions/editPositionDialog.tsx',
+      'components/ui/avatar.tsx',
+      'components/ui/alert-dialog.tsx',
+      'components/ui/**/*.tsx',
+      'components/dialogs/positions/create-position-dialog.tsx',
+      'components/dialogs/organization/member-management-dialog.tsx',
+    ],
     rules: {
       'react/jsx-handler-names': 'off',
     },
@@ -227,7 +240,7 @@ export const react = [
     rules: {
       'canonical/filename-match-exported': 'off',
     },
-  }
+  },
 ];
 
 export default react;

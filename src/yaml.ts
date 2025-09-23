@@ -1,6 +1,7 @@
 import yamlEslintParser from 'yaml-eslint-parser';
+import { type FlatConfigArray } from './types.js';
 
-export const yaml = [
+export const yaml: FlatConfigArray = [
   {
     rules: {
       'yml/sort-keys': [
@@ -50,7 +51,7 @@ export const yaml = [
     languageOptions: {
       parser: yamlEslintParser,
     },
-    files: ['**/*.yaml'],
+    files: ['**/*.yaml', '**/*.yml'],
   },
 ];
 

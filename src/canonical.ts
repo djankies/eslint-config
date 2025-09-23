@@ -1,4 +1,6 @@
-export const canonical = [
+import { type FlatConfigArray } from './types.js';
+
+export const canonical: FlatConfigArray = [
   {
     rules: {
       'canonical/id-match': [

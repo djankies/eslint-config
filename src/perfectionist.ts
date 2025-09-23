@@ -1,4 +1,6 @@
-export const perfectionist = [
+import { type FlatConfigArray } from './types.js';
+
+export const perfectionist: FlatConfigArray = [
   {
     rules: {
       // ...tsConfigs.perfectionist.rules,

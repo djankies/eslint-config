@@ -44,6 +44,11 @@ const applyPlugins = configs => {
 
 const applyConfig = (configName, omitPlugins = false) => {
   const configArray = ensureArray(eslintConfigs[configName]);
+  // For markdown config, return as-is since it already has the necessary plugins
+  if (configName === 'markdownConfig') {
+    return configArray;
+  }
+
   return omitPlugins ? configArray : applyPlugins(configArray);
 };
 
@@ -60,6 +65,7 @@ export default defineConfig([
   ...applyConfig('nodeConfig'),
   ...applyConfig('jsonConfig'),
   ...applyConfig('yamlConfig'),
+  ...applyConfig('markdownConfig'),
   ...applyConfig('regexpConfig'),
   ...applyConfig('zodConfig'),
   ...applyConfig('jtxConfig'),

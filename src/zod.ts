@@ -1,10 +1,11 @@
 import { FlatCompat } from '@eslint/eslintrc';
+import { type FlatConfigArray } from './types.js';
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
 });
 
-export const zod = compat
+export const zod: FlatConfigArray = compat
   .config({
     rules: {
       'zod/require-strict': 2,

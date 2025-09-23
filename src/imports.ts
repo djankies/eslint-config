@@ -1,4 +1,6 @@
-export const imports = [
+import { type FlatConfigArray } from './types.js';
+
+export const imports: FlatConfigArray = [
   {
     rules: {
       'import/no-extraneous-dependencies': [

@@ -1,6 +1,7 @@
 import jsoncParser from 'jsonc-eslint-parser';
+import { type FlatConfigArray } from './types.js';
 
-export const json = [
+export const json: FlatConfigArray = [
   {
     rules: {
       'jsonc/sort-keys': [

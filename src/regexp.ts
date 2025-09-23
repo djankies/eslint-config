@@ -1,7 +1,9 @@
 /**
  * https://github.com/ota-meshi/eslint-plugin-regexp/blob/master/lib/configs/recommended.ts
  */
-export const regexp = [
+import { type FlatConfigArray } from './types.js';
+
+export const regexp: FlatConfigArray = [
   {
     rules: {
       'regexp/no-potentially-useless-backreference': 'warn',

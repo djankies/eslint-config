@@ -1,4 +1,6 @@
-export const tsconfigs = [
+import { type FlatConfigArray } from './types.js';
+
+export const tsconfigs: FlatConfigArray = [
   {
     rules: {
       '@typescript-eslint/no-unsafe-member-access': 'warn',

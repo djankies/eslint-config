@@ -1,4 +1,6 @@
-export default [
+import { type FlatConfigArray } from './types.js';
+
+const jtxConfig: FlatConfigArray = [
   {
     rules: {
       'de-morgan/no-negated-conjunction': 'error',
@@ -7,3 +9,5 @@ export default [
     files: ['**/*.{js,jsx,ts,tsx}'],
   },
 ];
+
+export default jtxConfig;

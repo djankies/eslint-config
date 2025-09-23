@@ -1,14 +1,17 @@
 import { FlatCompat } from '@eslint/eslintrc';
+import { type FlatConfigArray } from './types.js';
 
 const compat = new FlatCompat({
   baseDirectory: process.cwd(), // Use current working directory (project root)
 });
 
-export const nextConfig = [
-  ...compat.extends('plugin:@next/next/recommended', 'plugin:@next/next/core-web-vitals').map(config => ({
-    ...config,
-    files: ['{app,components}/**/*.{js,jsx,ts,tsx}'],
-  })),
+export const nextConfig: FlatConfigArray = [
+  ...compat
+    .extends('plugin:@next/next/recommended', 'plugin:@next/next/core-web-vitals')
+    .map(config => ({
+      ...config,
+      files: ['{app,components}/**/*.{js,jsx,ts,tsx}'],
+    })),
   {
     rules: {
       '@next/next/no-before-interactive-script-outside-document': 'error',

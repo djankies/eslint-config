@@ -1,4 +1,6 @@
-export const mocksConfig = [
+import { type FlatConfigArray } from './types.js';
+
+export const mocksConfig: FlatConfigArray = [
   {
     rules: {
       '@typescript-eslint/no-unsafe-member-access': 'off',

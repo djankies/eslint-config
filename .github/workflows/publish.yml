@@ -1,5 +1,40 @@
+jobs:
+  publish:
+    permissions:
+      contents: write
+      id-token: write # Required for OIDC token to authenticate with npm
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: 'main'
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Update npm to latest version
+        run: npm install -g npm@latest
+      - name: Configure Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+      - name: Install dependencies
+        run: npm ci
+      - name: Build package
+        run: npm run build
+      - if: github.event_name == 'workflow_dispatch'
+        name: Version bump and tag (manual trigger only)
+        run: |
+          npm version ${{ github.event.inputs.version_type }}
+          git push origin main
+          git push --tags
+      - name: Publish to npm
+        run: npm publish --access public --tag latest
 name: Publish Package
-
 on:
   push:
     tags:
@@ -7,56 +42,11 @@ on:
   workflow_dispatch:
     inputs:
       version_type:
+        default: patch
         description: 'Version bump type'
-        required: true
-        type: choice
         options:
           - patch
           - minor
           - major
-        default: patch
-
-jobs:
-  publish:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      id-token: write # Required for OIDC token to authenticate with npm
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: 'main'
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Update npm to latest version
-        run: npm install -g npm@latest
-
-      - name: Configure Git
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build package
-        run: npm run build
-
-      - name: Version bump and tag (manual trigger only)
-        if: github.event_name == 'workflow_dispatch'
-        run: |
-          npm version ${{ github.event.inputs.version_type }}
-          git push origin main
-          git push --tags
-
-      - name: Publish to npm
-        run: npm publish --access public --tag latest
+        required: true
+        type: choice

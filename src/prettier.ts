@@ -1,4 +1,6 @@
-export const prettier = [
+import { type FlatConfigArray } from './types.js';
+
+export const prettier: FlatConfigArray = [
   {
     rules: {
       'prettier/prettier': [

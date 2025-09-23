@@ -1,5 +1,7 @@
 import globals from 'globals';
-export const vitest = [
+import { type FlatConfigArray } from './types.js';
+
+export const vitest: FlatConfigArray = [
   {
     rules: {
       'vitest/no-focused-tests': [
@@ -25,8 +27,6 @@ export const vitest = [
       'vitest/no-disabled-tests': 2,
       'vitest/lower-case-title': 0,
       'vitest/expect-expect': 2,
-
-
       'no-console': 'off',
     },
     files: [

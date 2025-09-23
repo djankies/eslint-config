@@ -1,6 +1,7 @@
 import { globalIgnores as createGlobalIgnores } from 'eslint/config';
+import { type FlatConfig } from './types.js';
 
-export const globalIgnores = createGlobalIgnores([
+export const globalIgnores: FlatConfig = createGlobalIgnores([
   // Dependencies
   '**/node_modules/',
   // Build outputs

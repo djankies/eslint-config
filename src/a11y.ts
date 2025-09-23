@@ -1,5 +1,7 @@
 /* eslint-disable canonical/filename-match-regex */
-export const a11y = [
+import { type FlatConfigArray } from './types.js';
+
+export const a11y: FlatConfigArray = [
   {
     rules: {
       'jsx-a11y/no-noninteractive-element-interactions': [

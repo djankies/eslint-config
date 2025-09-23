@@ -1,6 +1,7 @@
 import globals from 'globals';
+import { type FlatConfigArray } from './types.js';
 
-export const nodeConfig = [
+export const nodeConfig: FlatConfigArray = [
   {
     rules: {
       'n/shebang': [
