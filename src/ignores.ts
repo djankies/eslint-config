@@ -37,6 +37,11 @@ export const globalIgnores: FlatConfig = createGlobalIgnores([
 
   // ESLint config package
   '@eslint-config/',
+
+  // CSS
+  '**/*.css',
+  '**/*.scss',
+  '**/*.sass',
 ]);
 
 export default globalIgnores;
