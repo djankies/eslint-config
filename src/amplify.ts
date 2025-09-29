@@ -12,6 +12,8 @@ export const amplifyConfig: FlatConfigArray = [
       '@typescript-eslint/await-thenable': 'off',
       'import/no-unresolved': 'warn',
       'no-console': 'off',
+      'import/no-extraneous-dependencies': 'off',
+      'canonical/filename-match-regex': 'off',
     },
     files: ['amplify/**/*.{js,ts}'],
   },
