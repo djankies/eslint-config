@@ -3,14 +3,7 @@ import { type FlatConfigArray } from './types.js';
 export const imports: FlatConfigArray = [
   {
     rules: {
-      'import/no-extraneous-dependencies': [
-        2,
-        {
-          optionalDependencies: true,
-          peerDependencies: true,
-          devDependencies: true,
-        },
-      ],
+      'import/no-extraneous-dependencies': 0,
       'import/no-duplicates': [
         2,
         {

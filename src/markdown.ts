@@ -29,7 +29,6 @@ export const markdown: FlatConfigArray = [
       '@typescript-eslint/no-undef': 'off',
       '@typescript-eslint/no-shadow': 'off',
       'import/no-unresolved': 'off',
-      'import/no-extraneous-dependencies': 'off',
       'no-unused-expressions': 'off',
       'no-unused-vars': 'off',
       'no-console': 'off',

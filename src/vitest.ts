@@ -18,7 +18,6 @@ export const vitest: FlatConfigArray = [
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unsafe-call': 'off',
 
-      'import/no-extraneous-dependencies': 'off',
       'vitest/no-conditional-tests': 2,
       'vitest/max-nested-describe': 1,
 

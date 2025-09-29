@@ -10,7 +10,6 @@ export const mocksConfig: FlatConfigArray = [
       // Allow more flexibility in mocks
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unsafe-call': 'off',
-      'import/no-extraneous-dependencies': 'off',
       'no-console': 'off',
     },
     files: ['**/__mocks__/**/*', '**/*.mock.{js,jsx,ts,tsx}'],
