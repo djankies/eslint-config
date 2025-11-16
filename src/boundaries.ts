@@ -1,7 +1,12 @@
+import boundariesPlugin from 'eslint-plugin-boundaries';
 import { type FlatConfigArray } from './types.js';
 
 const boundariesConfig: FlatConfigArray = [
   {
+    plugins: {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
+      boundaries: boundariesPlugin as any,
+    },
     rules: {
       'boundaries/element-types': [
         'warn',
