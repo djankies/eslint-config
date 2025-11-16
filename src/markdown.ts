@@ -49,6 +49,12 @@ export const markdown: FlatConfigArray = [
       'canonical/filename-match-regex': 'off',
       'unicorn/prefer-export-from': 'off',
       'import/no-named-as-default': 'off',
+      'boundaries/element-types': 'off',
+      'boundaries/entry-point': 'off',
+      'boundaries/external': 'off',
+      'boundaries/no-unknown': 'off',
+      'boundaries/no-ignored': 'off',
+      'boundaries/no-private': 'off',
     },
   },
 ];

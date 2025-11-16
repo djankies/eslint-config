@@ -5,3 +5,5 @@ dist/
 .DS_Store
 coverage/
 *.tsbuildinfo
+# Snyk Security Extension - AI Rules (auto-generated)
+.cursor/rules/snyk_rules.mdc

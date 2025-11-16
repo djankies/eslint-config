@@ -65,11 +65,11 @@ export default defineConfig([
   ...applyConfig('nodeConfig'),
   ...applyConfig('jsonConfig'),
   ...applyConfig('yamlConfig'),
-  ...applyConfig('markdownConfig'),
   ...applyConfig('regexpConfig'),
   ...applyConfig('zodConfig'),
   ...applyConfig('jtxConfig'),
-  ...applyConfig('boundariesConfig'),
+  // Skip boundaries config for this package itself - it's meant for Next.js apps
+  // ...applyConfig('boundariesConfig'),
   ...applyConfig('vitestConfig'),
   ...applyConfig('mocksConfig'),
   ...applyConfig('amplifyConfig'),
@@ -77,4 +77,5 @@ export default defineConfig([
   ...applyConfig('tsconfigsConfig'),
   ...applyConfig('perfectionistConfig'),
   ...applyConfig('prettierConfig'),
+  ...applyConfig('markdownConfig'),
 ]);

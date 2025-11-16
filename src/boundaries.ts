@@ -145,6 +145,12 @@ const boundariesConfig: FlatConfigArray = [
               allow: ['test-mock', 'util', 'type'],
               from: 'test-mock',
             },
+
+            // Other files (like config packages) can import anything
+            {
+              allow: '*',
+              from: 'other',
+            },
           ],
           default: 'disallow',
         },
@@ -186,7 +192,7 @@ const boundariesConfig: FlatConfigArray = [
               allow: '*.{js,jsx,ts,tsx}',
             },
             {
-              target: ['tooling', 'assets', 'root-config'],
+              target: ['tooling', 'assets', 'root-config', 'other'],
               allow: '*',
             },
           ],
@@ -316,6 +322,12 @@ const boundariesConfig: FlatConfigArray = [
           pattern: ['**/__mocks__/**/*', '**/*.mock.{js,jsx,ts,tsx}'],
           type: 'test-mock',
         },
+
+        // Catch-all for any other files (like this config package itself)
+        {
+          pattern: '**/*',
+          type: 'other',
+        },
       ],
       'boundaries/ignore': [
         '**/*.test.{js,jsx,ts,tsx}',
@@ -329,6 +341,7 @@ const boundariesConfig: FlatConfigArray = [
         'out/**/*',
         'node_modules/**/*',
         'public/**/*',
+        '**/*.md/**/*',
       ],
     },
     files: ['**/*.{js,jsx,ts,tsx}'],

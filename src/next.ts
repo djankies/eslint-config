@@ -1,19 +1,17 @@
-import { FlatCompat } from '@eslint/eslintrc';
+import nextPlugin from '@next/eslint-plugin-next';
 import { type FlatConfigArray } from './types.js';
 
-const compat = new FlatCompat({
-  baseDirectory: process.cwd(), // Use current working directory (project root)
-});
-
 export const nextConfig: FlatConfigArray = [
-  ...compat
-    .extends('plugin:@next/next/recommended', 'plugin:@next/next/core-web-vitals')
-    .map(config => ({
-      ...config,
-      files: ['{app,components}/**/*.{js,jsx,ts,tsx}'],
-    })),
   {
+    files: ['{app,components}/**/*.{js,jsx,ts,tsx}'],
+    plugins: {
+      '@next/next': nextPlugin,
+    },
     rules: {
+      // eslint-disable-next-line import/no-named-as-default-member
+      ...nextPlugin.configs.recommended.rules,
+      // eslint-disable-next-line import/no-named-as-default-member
+      ...nextPlugin.configs['core-web-vitals'].rules,
       '@next/next/no-before-interactive-script-outside-document': 'error',
       '@next/next/no-script-component-in-head': 'error',
       '@next/next/no-document-import-in-page': 'error',
@@ -34,7 +32,6 @@ export const nextConfig: FlatConfigArray = [
       '@next/next/no-css-tags': 'warn',
       '@next/next/no-typos': 'warn',
     },
-    files: ['{app,components}/**/*.{js,jsx,ts,tsx}'],
   },
 ];
 

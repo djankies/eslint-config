@@ -12,7 +12,6 @@ import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import noUnsanitizedPlugin from 'eslint-plugin-no-unsanitized';
 import * as reactHooksPlugin from 'eslint-plugin-react-hooks';
 import perfectionistPlugin from 'eslint-plugin-perfectionist';
-// @ts-expect-error - no types available
 import boundariesPlugin from 'eslint-plugin-boundaries';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 // @ts-expect-error - no types available
